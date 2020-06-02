@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <link rel="shortcut icon" href="image/ico.png" type="image/png">
+</head>
+<body>
+<h1>
+    Заполните форму
+</h1>
+
+<form action="" method="post">
+    <p>
+        <label>
+            Ваше имя
+            <input type="text" name="name">
+        </label>
+        <label>
+            <input type="text" name="surname" placeholder="Ваша фамилия">
+        </label>
+    </p>
+    <p>
+        Пол:
+        <label>
+            <input type="radio" name="gender" value="man" placeholder="Man">
+            Мужской
+        </label>
+        <label>
+            <input type="radio" name="gender" value="woman">
+            Женский
+        </label>
+    </p>
+    <p>
+        <label>
+            Страна:<br>
+            <select name="languages">
+                <option>Россия</option>
+                <option>Украина</option>
+                <option>Беларусь</option>
+                <option>Грузия</option>
+                <option>Литва</option>
+                <option>США</option>
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>
+            Поставьте галочку
+            <input type="checkbox" name="checkbox" value="on">
+        </label>
+    </p>
+    <p>
+        <label>
+            Языки:<br>
+            <select name="languages" multiple size="2">
+                <option>Русский</option>
+                <option>Английский</option>
+                <option>Немецский</option>
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>
+            <textarea name="about-me" placeholder="О себе"></textarea>
+        </label>
+    </p>
+    <p>
+        <input type="submit" value="Отправить">
+    </p>
+</form>
+<p>
+    <a href="elements.html">Перейти к просмотру элементов</a>
+</p>
+</body>
+</html>
