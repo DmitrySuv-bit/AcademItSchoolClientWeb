@@ -1,0 +1,50 @@
+body {
+    background-color: #FEEED6;
+}
+
+div {
+    display: block;
+}
+
+.container {
+    max-width: 900px;
+    margin: initial;
+}
+
+.main-heading {
+    color: #676565;
+    max-width: 750px;
+    margin: 8px 0 0 11px;
+    font-size: 34px;
+    font-family: Arial,sans-serif;
+    font-weight: 500;
+}
+
+.course-information {
+    color: #78656A;
+    font-size: 21px;
+    margin: 12px 0 0 11px;
+    font-family: Arial,sans-serif;
+}
+
+.color-blue {
+    color: #378DB2;
+    font-weight: 600;
+}
+
+.course-content {
+    color: #78656A;
+    font-size: 19px;
+    margin: 0 0 14px 11px;
+    text-indent: 15px;
+    line-height: 126%;
+    text-align: justify;
+    font-family: Arial,sans-serif;
+    font-weight: 300;
+}
+
+.title-content {
+    font-size: 21px;
+    margin: 15px 0 14px 11px;
+    font-family: Arial,sans-serif;
+}
