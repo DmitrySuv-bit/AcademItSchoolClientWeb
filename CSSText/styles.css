@@ -11,12 +11,15 @@ div {
     margin: initial;
 }
 
+.main-font {
+    font-family: Arial,sans-serif;
+}
+
 .main-heading {
     color: #676565;
     max-width: 750px;
     margin: 8px 0 0 11px;
     font-size: 34px;
-    font-family: Arial,sans-serif;
     font-weight: 500;
 }
 
@@ -24,7 +27,6 @@ div {
     color: #78656A;
     font-size: 21px;
     margin: 12px 0 0 11px;
-    font-family: Arial,sans-serif;
 }
 
 .color-blue {
@@ -35,16 +37,18 @@ div {
 .course-content {
     color: #78656A;
     font-size: 19px;
-    margin: 0 0 14px 11px;
+    margin: 0 0 0 11px;
     text-indent: 15px;
     line-height: 126%;
     text-align: justify;
-    font-family: Arial,sans-serif;
     font-weight: 300;
+}
+
+.course-content p {
+    margin: 0 0 14px 0;
 }
 
 .title-content {
     font-size: 21px;
     margin: 15px 0 14px 11px;
-    font-family: Arial,sans-serif;
 }
