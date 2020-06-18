@@ -1,5 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #FEEED6;
+    font-family: Arial, sans-serif;
 }
 
 div {
@@ -7,18 +12,13 @@ div {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 910px;
     margin: initial;
-}
-
-.main-font {
-    font-family: Arial,sans-serif;
+    padding: 8px 11px 0 11px;
 }
 
 .main-heading {
     color: #676565;
-    max-width: 750px;
-    margin: 8px 0 0 11px;
     font-size: 34px;
     font-weight: 500;
 }
@@ -26,7 +26,11 @@ div {
 .course-information {
     color: #78656A;
     font-size: 21px;
-    margin: 12px 0 0 11px;
+    margin-top: 12px;
+}
+
+.strikethrough-text {
+    text-decoration: line-through;
 }
 
 .color-blue {
@@ -37,18 +41,18 @@ div {
 .course-content {
     color: #78656A;
     font-size: 19px;
-    margin: 0 0 0 11px;
-    text-indent: 15px;
-    line-height: 126%;
-    text-align: justify;
     font-weight: 300;
+    text-indent: 15px;
+    text-align: justify;
+    line-height: 126%;
 }
 
 .course-content p {
-    margin: 0 0 14px 0;
+    margin-bottom: 14px;
 }
 
 .title-content {
     font-size: 21px;
-    margin: 15px 0 14px 11px;
+    margin-top: 15px;
+    margin-bottom: 14px;
 }
