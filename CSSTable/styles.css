@@ -8,18 +8,14 @@ body {
     font-size: 22px;
 }
 
-div {
-    display: block;
-}
-
 .container {
     max-width: 880px;
     margin: 0 auto;
     padding: 10px 10px 0 10px;
 }
 
-.frame th, td {
-    padding: 14px 7px;
+.table_rows td {
+    padding: 14px 12px;
     border-style: solid;
     border-width: 1px;
     border-color: #CCCCCC;
@@ -27,28 +23,34 @@ div {
     vertical-align: middle;
 }
 
-.header_background {
+.table_header th {
+    padding: 14px 11px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    text-align: left;
+    vertical-align: middle;
     background-color: #3498DB;
     color: #FFFFFF;
     font-size: 24px;
 }
 
-.gray_background {
+.table_rows tr:nth-child(odd) {
     background-color: #EEEEEE;
 }
 
-table td:nth-child(1) {
+.first_column td:nth-child(1) {
     width: 176px;
 }
 
-table td:nth-child(2) {
+.second_column td:nth-child(2) {
     width: 173px;
 }
 
-table td:nth-child(3) {
+.third_column td:nth-child(3) {
     width: 310px;
 }
 
-table td:nth-child(4) {
+.fourth_column td:nth-child(4) {
     width: 201px;
 }
