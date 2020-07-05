@@ -1,68 +1,85 @@
-(function sortDescending() {
+(function () {
     // noinspection ES6ConvertVarToLetConst
-    var array = [1, 4, 10, -1, 2, -8];
+    var myArray = [1, 4, 10, -1, 2, -8, 5, 7, -45, -48, 321, 374, -1, 0];
 
-    array.sort(function (e1, e2) {
-        return e1 - e2;
-    }).reverse();
+    function getSortedDescendingArray(array) {
+        return array.sort(function (number1, number2) {
+            return number2 - number1;
+        });
+    }
+
+    function getSubarrayToIndex(array, toIndex) {
+        return array.slice(0, toIndex);
+    }
+
+    function getSubarrayFromIndex(array, fromIndex) {
+        // noinspection ES6ConvertVarToLetConst
+        var subarray;
+
+        if (array.length >= fromIndex) {
+            subarray = array.slice(array.length - fromIndex);
+        } else {
+            subarray = array.slice(0);
+        }
+
+        return subarray;
+    }
+
+    function getEvenNumbersArray(array) {
+        return array.filter(function (e) {
+            return e % 2 === 0;
+        });
+    }
+
+    function getSumArray(array) {
+        return array.reduce(function (sum, number) {
+            return sum + number;
+        }, 0);
+    }
+
+    function getFillArray(initialNumber, finiteNumber, step) {
+        // noinspection ES6ConvertVarToLetConst
+        var newArray = [];
+
+        while (initialNumber <= finiteNumber) {
+            newArray.push(initialNumber);
+
+            initialNumber += step;
+        }
+
+        return newArray;
+    }
+
+    function getSquaresArray(array) {
+        // noinspection ES6ConvertVarToLetConst
+        var squaresArray = [];
+
+        // noinspection ES6ConvertVarToLetConst
+        for (var i = 0; i < array.length; ++i) {
+            squaresArray.push(Math.pow(array[i], 2));
+        }
+
+        return squaresArray;
+    }
 
     console.log("Сортировка по убыванию: ");
-    console.log(array);
-})();
-
-(function subarray() {
-    // noinspection ES6ConvertVarToLetConst
-    var array = [5, 9, 4, 2, 6, 8];
-
-    // noinspection ES6ConvertVarToLetConst
-    var array1 = array.slice(0, 5);
-
-    if (array.length >= 5) {
-        // noinspection ES6ConvertVarToLetConst
-        var array2 = array.slice(array.length - 5);
-    } else {
-        array2 = array.slice(0);
-    }
+    console.log(getSortedDescendingArray(myArray));
 
     console.log("Подмассив из первых 5 элементов: ");
-    console.log(array1);
+    console.log(getSubarrayToIndex(myArray, 5));
 
     console.log("Подмассив из последних 5 элементов: ");
-    console.log(array2);
-})();
-
-(function evenNumbersSum() {
-    // noinspection ES6ConvertVarToLetConst
-    var array = [5, 9, 4, 2, 6, 8, 10];
-
-    // noinspection ES6ConvertVarToLetConst
-    var evenNumbersArray = array.filter(function (e) {
-        return e % 2 === 0;
-    });
-
-    // noinspection ES6ConvertVarToLetConst
-    var evenNumbersSum = evenNumbersArray.reduce(function (e1, e2) {
-        return e1 + e2;
-    }, 0);
+    console.log(getSubarrayFromIndex(myArray, 5));
 
     console.log("Массив четных чисел: ");
-    console.log(evenNumbersArray);
+    console.log(getEvenNumbersArray(myArray));
 
     console.log("Сумма элементов массива, четных чисел: ");
-    console.log(evenNumbersSum);
-})();
+    console.log(getSumArray(getEvenNumbersArray(myArray)));
 
-(function squaresEvenNumbers() {
-    // noinspection ES6ConvertVarToLetConst
-    var squaresEvenNumbersArray = [];
-
-    // noinspection ES6ConvertVarToLetConst
-    for (var i = 0; i < 100; ++i) {
-        if ((i + 1) % 2 === 0) {
-            squaresEvenNumbersArray.push((i + 1) * (i + 1));
-        }
-    }
+    console.log("Созданный массив чисел от 1 до 100: ");
+    console.log(getFillArray(1, 100, 1));
 
     console.log("Массив квадратов четных чисел: ");
-    console.log(squaresEvenNumbersArray);
+    console.log(getSquaresArray(getEvenNumbersArray(getFillArray(1, 100, 1))));
 })();
