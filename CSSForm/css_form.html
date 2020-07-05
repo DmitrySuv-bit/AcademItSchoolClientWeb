@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>CSS Form</title>
@@ -12,33 +12,33 @@
 </div>
 <div class="container">
     <form action="" method="post">
-        <div>
+        <div class="under_container">
             <label>
-                <p>Ваше имя</p>
-                <input type="text" name="name" placeholder="Ваше имя *" required>
+                <div class="field_name">Ваше имя</div>
+                <input class="input_field_style" type="text" name="name" placeholder="Ваше имя *" required>
             </label>
         </div>
-        <div>
+        <div class="under_container">
             <label>
-                <p>Ваш номер телефона</p>
-                <input type="tel" name="tel" placeholder="Ваш номер телефона *" required>
+                <div class="field_name">Ваш номер телефона</div>
+                <input class="input_field_style" type="tel" name="tel" placeholder="Ваш номер телефона *" required>
             </label>
         </div>
-        <div>
+        <div class="under_container">
             <label>
-                <p>Ваш email или VK</p>
-                <input type="text" name="email" placeholder="Ваш email или VK *" required>
+                <div class="field_name">Ваш email или VK</div>
+                <input class="input_field_style" type="text" name="email" placeholder="Ваш email или VK *" required>
             </label>
         </div>
-        <div>
+        <div class="under_container">
             <label>
-                <p>Комментарий</p>
-                <textarea name="comment" placeholder="Комментарий (не обязательно)"></textarea>
+                <div class="field_name">Комментарий</div>
+                <textarea class="textarea_style" name="comment" placeholder="Комментарий (не обязательно)"></textarea>
             </label>
         </div>
-        <div>Заполните и отправте форму, и мы перезвоним Вам по указаному номеру</div>
-        <div class="align-right">
-            <input type="submit" value="Отправить заявку">
+        <div class="under_container">Заполните и отправьте форму, и мы перезвоним Вам по указаному номеру</div>
+        <div class="align-right under_container">
+            <input class="submit_style" type="submit" value="Отправить заявку">
         </div>
     </form>
 </div>
