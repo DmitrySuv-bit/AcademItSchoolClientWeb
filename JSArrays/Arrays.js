@@ -41,10 +41,22 @@
         // noinspection ES6ConvertVarToLetConst
         var newArray = [];
 
-        while (initialNumber <= finiteNumber) {
-            newArray.push(initialNumber);
+        if (initialNumber === finiteNumber) {
+            return newArray;
+        } else if (initialNumber > finiteNumber) {
+            while (initialNumber >= finiteNumber) {
+                newArray.push(initialNumber);
 
-            initialNumber += step;
+                initialNumber -= step;
+            }
+
+            return newArray;
+        } else {
+            while (initialNumber <= finiteNumber) {
+                newArray.push(initialNumber);
+
+                initialNumber += step;
+            }
         }
 
         return newArray;
