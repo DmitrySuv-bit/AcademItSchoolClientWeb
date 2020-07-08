@@ -51,15 +51,9 @@
     }
 
     function getSquaresArray(array) {
-        // noinspection ES6ConvertVarToLetConst
-        var squaresArray = [];
-
-        // noinspection ES6ConvertVarToLetConst
-        for (var i = 0; i < array.length; ++i) {
-            squaresArray.push(Math.pow(array[i], 2));
-        }
-
-        return squaresArray;
+        return array.map(function (number) {
+            return number * number;
+        });
     }
 
     console.log("Сортировка по убыванию: ");
