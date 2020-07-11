@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature converter</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="heading">
+        <h1>Temperature converter</h1>
+    </div>
+    <div class="under_container">
+        <label>
+            <div class="field_description">Enter the temperature in Celsius:</div>
+            <input class="entry_field" type="number" name="inlet_temperature">
+        </label>
+    </div>
+    <div class="under_container align-center">
+        <input class="style_button convert_button" type="button" name="convert_button" value="Convert">
+        <input class="style_button reset_button" type="button" name="reset_button" value="Reset">
+    </div>
+    <div class="under_container">
+        <label>
+            <div class="field_description emphasize">
+                Temperature in Kelvin:
+                <input class="output_field" type="text" name="in_Kelvin" readonly>
+            </div>
+        </label>
+        <label>
+            <div class="field_description emphasize">
+                Temperature in Fahrenheit :
+                <input class="output_field" type="text" name="in_Fahrenheit" readonly>
+            </div>
+        </label>
+    </div>
+</div>
+<script src="convert.js"></script>
+</body>
+</html>

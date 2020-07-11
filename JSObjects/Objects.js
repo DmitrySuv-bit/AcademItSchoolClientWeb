@@ -18,7 +18,7 @@
         // noinspection ES6ConvertVarToLetConst
         var countriesObject = {};
 
-        countries.forEach(function (country) {
+        countries.map(function (country) {
             countriesObject[country.name] = country.cities.reduce(function (sum, city) {
                 return sum + city.population;
             }, 0);

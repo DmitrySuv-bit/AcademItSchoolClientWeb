@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    background-color: #D9EFFE;
+}
+
+.container {
+    max-width: 350px;
+    margin: 15px auto;
+    padding: 0 20px;
+    background-color: #DAEAFD;
+    border-style: dotted;
+    border-width: 2px;
+    border-color: #3498DB;
+}
+
+.under_container {
+    padding: 5px 0;
+}
+
+.heading {
+    font-size: 26px;
+    padding: 10px;
+    text-align: center;
+    color: #3498DB;
+}
+
+.field_description {
+    padding: 5px 0;
+    text-align: left;
+    color: #008bb3;
+}
+
+.entry_field {
+    width: 100%;
+    padding: 3px 4px;
+    background-color: #e2eafc;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: #3498DB;
+}
+
+.output_field {
+    width: 20%;
+    border: 0;
+    background-color: #DAEAFD;
+}
+
+.style_button {
+    margin: 0 10px;
+    background-color: #D0E5FF;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 7px 13px;
+    text-align: center;
+    vertical-align: middle;
+    color: #175987;
+}
+
+.convert_button {
+    border-style: dotted;
+    border-width: 2px;
+    border-color: #3498DB;
+}
+
+.reset_button {
+    border-style: dotted;
+    border-width: 2px;
+    border-color: #f5a3a3;
+}
+
+.convert_button:hover {
+    background-color: #c4e0ff;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: #2490d7;
+}
+
+.reset_button:hover {
+    background-color: rgba(252, 87, 87, 0.24);
+    border-style: dashed;
+    border-width: 2px;
+    border-color: #f14848;
+    color: black;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.emphasize {
+    border-style: dotted;
+    border-bottom-width: 2px;
+    border-color: #3498DB;
+}
