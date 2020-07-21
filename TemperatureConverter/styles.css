@@ -18,7 +18,7 @@ body {
     border-color: #3498DB;
 }
 
-.under_container {
+.secondary_container {
     padding: 5px 0;
 }
 
@@ -32,6 +32,7 @@ body {
 .field_description {
     padding: 5px 0;
     text-align: left;
+    line-height: 20px;
     color: #008bb3;
 }
 
@@ -50,7 +51,7 @@ body {
     background-color: #DAEAFD;
 }
 
-.style_button {
+.button {
     margin: 0 10px;
     background-color: #D0E5FF;
     font-size: 18px;
@@ -96,4 +97,14 @@ body {
     border-style: dotted;
     border-bottom-width: 2px;
     border-color: #3498DB;
+}
+
+.in_kelvin {
+    color: black;
+    font-weight: 600;
+}
+
+.in_fahrenheit {
+    color: black;
+    font-weight: 600;
 }
