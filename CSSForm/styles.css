@@ -19,11 +19,11 @@ body {
 .heading {
     background-color: #F3F3F3;
     font-size: 30px;
-    padding: 10px 10px 7px 22px;
+    padding: 10px 22px 7px 22px;
     color: #676565;
 }
 
-.under_container {
+.secondary_container {
     padding-top: 19px;
 }
 
@@ -32,17 +32,17 @@ body {
     font-weight: 700;
 }
 
-.input_field_style {
+.input_field {
     border-width: 0;
     width: 100%;
     padding: 9px 14px;
 }
 
-.input_field_style::placeholder {
+.input_field::placeholder {
     color: #a5b3cd;
 }
 
-.submit_style {
+.submit {
     background-color: #378DB2;
     font-size: 16px;
     font-weight: 700;
@@ -53,18 +53,19 @@ body {
     color: #FFFFFF;
 }
 
-.submit_style:hover {
+.submit:hover {
     background-color: #377594;
 }
 
-.textarea_style {
+.textarea {
     border-width: 0;
     width: 100%;
-    padding: 10px 14px 78px 14px;
+    height: 129px;
+    padding: 10px 14px;
     font-family: Arial, sans-serif;
 }
 
-.textarea_style::placeholder {
+.textarea::placeholder {
     color: #A5B3CD;
 }
 
