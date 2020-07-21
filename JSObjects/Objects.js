@@ -1,13 +1,11 @@
 (function () {
-    function getCountriesWithCitiesMaxCounts(countries) {
+    function getCountriesWithMaxCitiesCount(countries) {
         // noinspection ES6ConvertVarToLetConst
         var citiesMaxCount = 0;
 
-        countries.forEach(function (country) {
-            if (country.cities.length >= citiesMaxCount) {
-                citiesMaxCount = country.cities.length;
-            }
-        });
+        countries.reduce(function (max, country) {
+            return citiesMaxCount = Math.max(country.cities.length, citiesMaxCount)
+        }, 0);
 
         return countries.filter(function (country) {
             return country.cities.length === citiesMaxCount;
@@ -18,7 +16,7 @@
         // noinspection ES6ConvertVarToLetConst
         var countriesObject = {};
 
-        countries.map(function (country) {
+        countries.forEach(function (country) {
             countriesObject[country.name] = country.cities.reduce(function (sum, city) {
                 return sum + city.population;
             }, 0);
@@ -75,14 +73,14 @@
                     population: 21710000
                 }
             ]
-        }];
+        }
+    ];
 
     console.log("Массив стран: ");
     console.log(countries);
 
     console.log("Страна/страны с максимальным количеством городов: ");
-    console.log(getCountriesWithCitiesMaxCounts(countries));
-
+    console.log(getCountriesWithMaxCitiesCount(countries));
 
     console.log("Объект с информацией по всем странам: ");
     console.log(getCountriesObject(countries));
