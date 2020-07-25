@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Введите заметку!!!");
             return;
         }
+        
         var todoItem = document.createElement("li");
 
         todoItem.className = "container";
