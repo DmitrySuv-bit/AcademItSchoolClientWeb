@@ -30,7 +30,7 @@ body {
 .input_field {
     background-color: rgba(113, 177, 246, 0.75);
     border-width: 0;
-    width: 88%;
+    width: 87%;
     padding: 9px 14px;
     border-radius: 10px;
 }
@@ -62,7 +62,7 @@ body {
 .text_style {
     background-color: rgba(246, 193, 113, 0.75);
     border-width: 0;
-    width: 74%;
+    width: 72%;
     padding: 9px 14px;
     border-radius: 10px;
 }
@@ -97,6 +97,6 @@ body {
     }
 
     .button {
-        margin: 5px 0;
+        margin-top: 5px;
     }
 }
