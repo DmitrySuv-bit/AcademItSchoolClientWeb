@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var addTodoButton = document.getElementById("add_button");
-    var newTodoTextField = document.querySelector(".container input[name=note_entry]");
+    var newTodoTextField = document.querySelector(".input_field");
     var todoList = document.getElementById("todo_list");
 
     addTodoButton.addEventListener("click", function () {
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Введите заметку!!!");
             return;
         }
-        
+
         var todoItem = document.createElement("li");
 
         todoItem.className = "container";
@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
         switchToViewMode();
 
         function switchToViewMode() {
-            todoItem.innerHTML = "<input class='text_style' type='text' name='text' readonly/> " +
-                "<button class='button edit_button' type='button' name='edit_button'>Редактировать</button> " +
-                "<button class='button delete_button' type='button' name='delete_button'>Удалить</button>";
+            todoItem.innerHTML = "<input class='text_style' type='text' readonly/> " +
+                "<button class='button edit_button' type='button'>Редактировать</button> " +
+                "<button class='button delete_button' type='button'>Удалить</button>";
 
             todoItem.querySelector(".text_style").value = text;
 
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             todoItem.querySelector(".edit_button")
                 .addEventListener("click", function () {
-                    todoItem.innerHTML = "<input class='text_style' type='text' name='text'/> " +
-                        "<button class='button save_button' type='button' name='save_button'>Сохранить</button> " +
-                        "<button class='button cancel_button' type='button' name='cancel_button'>Отмена</button>";
+                    todoItem.innerHTML = "<input class='text_style' type='text'/> " +
+                        "<button class='button save_button' type='button'>Сохранить</button> " +
+                        "<button class='button cancel_button' type='button'>Отмена</button>";
 
                     todoItem.querySelector(".text_style").value = text;
 
