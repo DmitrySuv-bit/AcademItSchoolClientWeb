@@ -1,6 +1,5 @@
 (function () {
     function getCountriesWithMaxCitiesCount(countries) {
-        // noinspection ES6ConvertVarToLetConst
         var citiesMaxCount = 0;
 
         countries.reduce(function (max, country) {
@@ -13,7 +12,6 @@
     }
 
     function getCountriesObject(countries) {
-        // noinspection ES6ConvertVarToLetConst
         var countriesObject = {};
 
         countries.forEach(function (country) {
@@ -25,7 +23,6 @@
         return countriesObject;
     }
 
-    // noinspection ES6ConvertVarToLetConst
     var countries = [
         {
             name: "Russia",
