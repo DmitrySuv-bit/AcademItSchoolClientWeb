@@ -1,13 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // noinspection ES6ConvertVarToLetConst
     var convertButton = document.querySelector(".convert_button");
-    // noinspection ES6ConvertVarToLetConst
     var resetButton = document.querySelector(".reset_button");
-    // noinspection ES6ConvertVarToLetConst
     var inputTemperature = document.querySelector(".entry_field");
-    // noinspection ES6ConvertVarToLetConst
     var inKelvin = document.querySelector(".in_kelvin");
-    // noinspection ES6ConvertVarToLetConst
     var inFahrenheit = document.querySelector(".in_fahrenheit");
 
     convertButton.addEventListener("click", function () {
