@@ -1,9 +1,7 @@
 (function () {
     function getCountriesWithMaxCitiesCount(countries) {
-        var citiesMaxCount = 0;
-
-        countries.reduce(function (max, country) {
-            return citiesMaxCount = Math.max(country.cities.length, citiesMaxCount)
+        var citiesMaxCount = countries.reduce(function (max, country) {
+            return Math.max(country.cities.length, max);
         }, 0);
 
         return countries.filter(function (country) {
@@ -18,7 +16,7 @@
             countriesObject[country.name] = country.cities.reduce(function (sum, city) {
                 return sum + city.population;
             }, 0);
-        })
+        });
 
         return countriesObject;
     }
