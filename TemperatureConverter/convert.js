@@ -7,11 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     convertButton.addEventListener("click", function () {
         if (inputTemperature.value === "") {
-            return alert("Enter value");
+            alert("Enter value");
+
+            return;
         }
 
-        inKelvin.innerText = +inputTemperature.value + 273.15;
-        inFahrenheit.innerText = +inputTemperature.value * 1.8 + 32;
+        inKelvin.textContent = (+inputTemperature.value + 273.15).toFixed(2);
+        inFahrenheit.textContent = (+inputTemperature.value * 1.8 + 32).toFixed(2);
     });
 
     resetButton.addEventListener("click", function () {
