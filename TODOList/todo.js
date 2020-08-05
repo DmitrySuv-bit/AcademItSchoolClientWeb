@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
         switchToViewMode();
 
         function switchToViewMode() {
-            todoItem.innerHTML = "<input class='text_style' type='text' readonly/> " +
+            todoItem.innerHTML = "<input class='note_text' type='text' readonly/> " +
                 "<button class='button edit_button' type='button'>Редактировать</button> " +
                 "<button class='button delete_button' type='button'>Удалить</button>";
 
-            todoItem.querySelector(".text_style").value = text;
+            todoItem.querySelector(".note_text").value = text;
 
             todoItem.querySelector(".delete_button")
                 .addEventListener("click", function () {
@@ -31,15 +31,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             todoItem.querySelector(".edit_button")
                 .addEventListener("click", function () {
-                    todoItem.innerHTML = "<input class='text_style' type='text'/> " +
+                    todoItem.innerHTML = "<input class='note_text' type='text'/> " +
                         "<button class='button save_button' type='button'>Сохранить</button> " +
                         "<button class='button cancel_button' type='button'>Отмена</button>";
 
-                    todoItem.querySelector(".text_style").value = text;
+                    todoItem.querySelector(".note_text").value = text;
 
                     todoItem.querySelector(".save_button")
                         .addEventListener("click", function () {
-                            text = todoItem.querySelector(".text_style").value;
+                            if (todoItem.querySelector(".note_text").value.length === 0) {
+                                todoItem.parentNode.removeChild(todoItem);
+                            }
+
+                            text = todoItem.querySelector(".note_text").value;
                             switchToViewMode();
                         });
 

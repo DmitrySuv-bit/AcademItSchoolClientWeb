@@ -18,7 +18,7 @@ $(document).ready(function () {
         switchToViewMode();
 
         function switchToViewMode() {
-            todoItem.html("<input class='text_style' type='text' readonly/> " +
+            todoItem.html("<input class='note_text' type='text' readonly/> " +
                 "<button class='button edit_button' type='button'>Редактировать</button> " +
                 "<button class='button delete_button' type='button'>Удалить</button>");
 
@@ -29,13 +29,17 @@ $(document).ready(function () {
             });
 
             todoItem.find(".edit_button").click(function () {
-                todoItem.html("<input class='text_style' type='text'/> " +
+                todoItem.html("<input class='note_text' type='text'/> " +
                     "<button class='button save_button' type='button'>Сохранить</button> " +
                     "<button class='button cancel_button' type='button'>Отмена</button>");
 
                 todoItem.find(".text_style").val(text);
 
                 todoItem.find(".save_button").click(function () {
+                    if (todoItem.find(".text_style").val(text).length === 0) {
+                        todoItem.remove();
+                    }
+
                     text = todoItem.find(".text_style").val();
                     switchToViewMode();
                 });

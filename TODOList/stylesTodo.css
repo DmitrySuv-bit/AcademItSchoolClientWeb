@@ -59,7 +59,7 @@ body {
     border-color: #04167d;
 }
 
-.text_style {
+.note_text {
     background-color: rgba(246, 193, 113, 0.75);
     border-width: 0;
     width: 72%;
@@ -88,7 +88,7 @@ body {
         width: 100%;
     }
 
-    .text_style {
+    .note_text {
         width: 100%;
     }
 
