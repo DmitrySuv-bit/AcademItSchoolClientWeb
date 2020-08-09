@@ -17,13 +17,14 @@
     }
 
     function addFullName(people) {
-        return _.chain(people)
-            .map(function (person) {
-                var fullName = person.name + " " + person.lastName;
-
-                return _.extend(person, {fullName: fullName});
-            })
-            .value();
+        return _.map(people, function (person) {
+            return {
+                name: person.name,
+                lastName: person.lastName,
+                age: person.age,
+                fullName: person.name + " " + person.lastName
+            };
+        });
     }
 
     var people = [
