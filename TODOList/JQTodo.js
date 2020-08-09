@@ -22,7 +22,7 @@ $(document).ready(function () {
                 "<button class='button edit_button' type='button'>Редактировать</button> " +
                 "<button class='button delete_button' type='button'>Удалить</button>");
 
-            todoItem.find(".text_style").val(text);
+            todoItem.find(".note_text").val(text);
 
             todoItem.find(".delete_button").click(function () {
                 todoItem.remove();
@@ -33,14 +33,14 @@ $(document).ready(function () {
                     "<button class='button save_button' type='button'>Сохранить</button> " +
                     "<button class='button cancel_button' type='button'>Отмена</button>");
 
-                todoItem.find(".text_style").val(text);
+                todoItem.find(".note_text").val(text);
 
                 todoItem.find(".save_button").click(function () {
-                    if (todoItem.find(".text_style").val(text).length === 0) {
+                    if (todoItem.find(".note_text").val(text).length === 0) {
                         todoItem.remove();
                     }
 
-                    text = todoItem.find(".text_style").val();
+                    text = todoItem.find(".note_text").val();
                     switchToViewMode();
                 });
 
