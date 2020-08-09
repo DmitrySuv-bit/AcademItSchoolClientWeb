@@ -1,0 +1,56 @@
+.my_container {
+    max-width: 500px;
+}
+
+.table th, .table td {
+    border-width: 4px 2px;
+    border-color: white;
+}
+
+.table th {
+    background-color: #4F81BD;
+    color: #FFFFFF;
+}
+
+.table tr {
+    background-color: #d0d8e8;
+}
+
+.delete_button {
+    border-width: 0;
+    padding: 0;
+    background-color: #d0d8e8;
+    color: #880f08;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.delete_button:focus {
+    outline: none;
+}
+
+.emphasize {
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+    border-color: #3498DB;
+}
+
+.note_number {
+
+}
+
+.name_column {
+
+}
+
+.surname_column {
+
+}
+
+.phone_column {
+
+}
+
+.phone_matching_error {
+    display: none;
+}
