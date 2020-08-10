@@ -19,7 +19,7 @@
 .delete_button {
     border-width: 0;
     padding: 0;
-    background-color: #d0d8e8;
+    background-color: inherit;
     color: #880f08;
     font-size: 16px;
     font-weight: 700;
@@ -36,21 +36,21 @@
 }
 
 .note_number {
-
 }
 
 .name_column {
-
 }
 
 .surname_column {
-
 }
 
 .phone_column {
-
 }
 
 .phone_matching_error {
     display: none;
+}
+
+.table-hover {
+    background-color: #c7d0e7;
 }

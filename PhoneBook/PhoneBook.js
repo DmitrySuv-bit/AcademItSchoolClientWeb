@@ -5,12 +5,13 @@ $(document).ready(function () {
     var newSurnameTextField = $("#inputSurname");
     var newPhoneTextField = $("#inputPhone");
     var table = $(".table > tbody");
-    var noteNumber = 1;
     var forms = $(".needs-validation");
-    var bol = false;
+
+    var isAddedPhone = false;
+    var noteNumber = 1;
 
     clearNoteButton.click(function () {
-        clear()
+        clearForm();
     });
 
     addNoteButton.click(function () {
@@ -24,20 +25,20 @@ $(document).ready(function () {
             return;
         }
 
-        function visible() {
+        function checkPhoneMatch() {
             table.find("tr").each(function () {
                 if ($(this).find(".phone_column").text() === textPhone) {
-                    bol = true;
+                    isAddedPhone = true;
                 }
             });
 
-            return bol;
+            return isAddedPhone;
         }
 
-        if (visible()) {
+        if (checkPhoneMatch()) {
             $(".phone_matching_error").show();
 
-            bol = false;
+            isAddedPhone = false;
         } else {
             $(".phone_matching_error").hide();
 
@@ -47,9 +48,8 @@ $(document).ready(function () {
 
             table.append(tableItem);
 
-            clear();
+            clearForm();
         }
-
 
         function switchToViewMode() {
             tableItem.html("<td class='text-center note_number'></td> <td class='name_column'></td>" +
@@ -82,12 +82,14 @@ $(document).ready(function () {
         }
     });
 
-    function clear() {
+    function clearForm() {
         newNameTextField.val("");
         newSurnameTextField.val("");
         newPhoneTextField.val("");
 
-        removeValidated()
+        $(".phone_matching_error").hide();
+
+        removeValidated();
     }
 
     function addValidated() {
@@ -97,6 +99,7 @@ $(document).ready(function () {
                     event.preventDefault();
                     event.stopPropagation();
                 }
+
                 form.classList.add('was-validated');
             }, false);
         });
@@ -114,5 +117,4 @@ $(document).ready(function () {
             }, false);
         });
     }
-
 });
