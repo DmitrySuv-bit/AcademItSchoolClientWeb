@@ -14,7 +14,7 @@
         <div class="col-5">
             <form class="needs-validation" novalidate>
                 <div class="form-group">
-                    <label for="inputName">Ваше Имя:</label>
+                    <label for="inputName">*Имя контакта:</label>
                     <input type="text" class="form-control" id="inputName" required>
                     <div class="invalid-feedback">
                         Поле Имя не заполнено!!!
@@ -24,15 +24,15 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputSurname">Ваша Фамилия:</label>
+                    <label for="inputSurname">*Фамилия контакта:</label>
                     <input type="text" class="form-control" id="inputSurname" required>
                     <div class="invalid-feedback">
                         Поле Фамилия не заполнено!!!
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPhone">Ваш Номер телефона:</label>
-                    <input type="tel" class="form-control" id="inputPhone" required>
+                    <label for="inputPhone">*Номер телефона контакта:</label>
+                    <input type="number" class="form-control raz" id="inputPhone" required>
                     <div class="invalid-feedback">
                         Поле Номер телефона не заполнено!!!
                     </div>
@@ -40,7 +40,7 @@
                 <button type="button" class="btn btn-outline-primary" id="add_button">Добавить</button>
                 <button type="button" class="btn btn-outline-danger" id="clear_button">Очистить</button>
                 <div class="phone_matching_error mt-2 mb-0 alert alert-danger">
-                    Контакт с таким номером уже добавлен.
+                    Контакт с таким номером телефона уже добавлен!!!
                 </div>
             </form>
         </div>
