@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             var noteText = todoItem.querySelector(".note_text").value;
 
                             if (noteText.length === 0) {
-                                alert("Нельзя сохранить пустую заметку!!! Введите текст или нажмите Отмена.")
+                                alert("Нельзя сохранить пустую заметку!!! Введите текст или нажмите Отмена.");
                                 return;
                             }
 
