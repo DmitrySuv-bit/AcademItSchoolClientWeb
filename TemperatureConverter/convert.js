@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     convertButton.addEventListener("click", function () {
         if (inputTemperature.value === "") {
             alert("Enter value");
-
             return;
         }
 
@@ -18,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     resetButton.addEventListener("click", function () {
         inputTemperature.value = "";
-        inKelvin.innerText = "";
-        inFahrenheit.innerText = "";
+        inKelvin.textContent = "";
+        inFahrenheit.textContent = "";
     });
 });
