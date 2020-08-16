@@ -1,0 +1,17 @@
+body {
+    background-color: #dbeafa;
+}
+.heading {
+    font-family: Bradley Hand, cursive;
+    font-size: 60px;
+    padding: 10px;
+    text-align: center;
+    color: #024065;
+    background-color: rgba(116, 161, 221, 0.45);
+}
+
+.emphasize {
+    border-style: dashed;
+    border-color: #000e15;
+    border-width: 0 0 3px 0;
+}

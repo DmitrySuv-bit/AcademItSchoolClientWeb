@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Todo List</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<h1 class="text-center heading">TODO List</h1>
+<div v-cloak id="app" class="container">
+    <todo-list></todo-list>
+</div>
+
+<script id="todo-list-template" type="text/x-template">
+    <div>
+        <div class="input-group py-3 emphasize">
+            <input v-model="newItemText" type="text" class="form-control" placeholder="Введите заметку"
+                   aria-label="Введите заметку" aria-describedby="add_button">
+            <div class="input-group-append">
+                <button @click="addItem" class="btn btn-outline-success" type="button" id="add_button">Добавить
+                </button>
+            </div>
+        </div>
+        <div>
+            <todo-item :item="item" :key="item.id" @remove-item="removeItem" v-for="item in items"></todo-item>
+        </div>
+    </div>
+</script>
+
+<script id="todo-item-template" type="text/x-template">
+    <div>
+        <div class="input-group py-2" v-show="!isEdited">
+            <input v-model="item.text" type="text" class="form-control" aria-label="new-note"
+                   aria-describedby="button-note" readonly>
+            <div class="input-group-append" id="button-note">
+                <button @click="editItem" class="btn btn-outline-primary" type="button">Редактировать</button>
+                <button @click="removeItem" class="btn btn-outline-danger" type="button">Удалить</button>
+            </div>
+        </div>
+        <div class="input-group py-2" v-show="isEdited">
+            <input v-model="newText" type="text" class="form-control" aria-label="new-note"
+                   aria-describedby="edit-button-note">
+            <div class="input-group-append" id="edit-button-note">
+                <button @click="saveItem" class="btn btn-outline-primary" type="button">Сохранить</button>
+                <button @click="cancelItem" class="btn btn-outline-danger" type="button">Отменить</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="VueTodoList.js"></script>
+</body>
+</html>
