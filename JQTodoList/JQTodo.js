@@ -36,11 +36,14 @@ $(document).ready(function () {
                 todoItem.find(".note_text").val(text);
 
                 todoItem.find(".save_button").click(function () {
-                    if (todoItem.find(".note_text").val(text).length === 0) {
-                        todoItem.remove();
+                    var noteText = todoItem.find(".note_text").val();
+
+                    if (noteText.length === 0) {
+                        alert("Нельзя сохранить пустую заметку!!! Введите текст или нажмите Отмена.");
+                        return;
                     }
 
-                    text = todoItem.find(".note_text").val();
+                    text = noteText;
                     switchToViewMode();
                 });
 
