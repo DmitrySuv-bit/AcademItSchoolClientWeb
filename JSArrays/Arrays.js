@@ -1,5 +1,4 @@
 (function () {
-    // noinspection ES6ConvertVarToLetConst
     var myArray = [1, 4, 10, -1, 2, -8, 5, 7, -45, -48, 321, 374, -1, 0];
 
     function getSortedDescendingArray(array) {
@@ -13,7 +12,6 @@
     }
 
     function getSubarrayFromIndex(array, fromIndex) {
-        // noinspection ES6ConvertVarToLetConst
         var subarray;
 
         if (array.length >= fromIndex) {
@@ -38,7 +36,6 @@
     }
 
     function getFillArray(initialNumber, finiteNumber, step) {
-        // noinspection ES6ConvertVarToLetConst
         var newArray = [];
 
         if (initialNumber === finiteNumber) {
