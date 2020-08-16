@@ -33,7 +33,7 @@ Vue.component("todo-list", {
     data: function () {
         return {
             items: [],
-            newItemText: "",
+            newItemText: ""
         }
     },
     methods: {
