@@ -39,11 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     todoItem.querySelector(".save_button")
                         .addEventListener("click", function () {
-                            if (todoItem.querySelector(".note_text").value.length === 0) {
-                                todoItem.parentNode.removeChild(todoItem);
+                            var noteText = todoItem.querySelector(".note_text").value;
+
+                            if (noteText.length === 0) {
+                                alert("Нельзя сохранить пустую заметку!!! Введите текст или нажмите Отмена.");
+                                return;
                             }
 
-                            text = todoItem.querySelector(".note_text").value;
+                            text = noteText;
                             switchToViewMode();
                         });
 
