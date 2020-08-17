@@ -12,6 +12,8 @@
   "dependencies": {
     "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
+    "vee-validate": "^3.3.9",
     "vue": "^2.6.11"
-  }
+  },
+  "devDependencies": {}
 }

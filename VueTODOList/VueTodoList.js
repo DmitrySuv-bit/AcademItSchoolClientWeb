@@ -2,7 +2,8 @@ Vue.component("todo-item", {
     data: function () {
         return {
             newText: this.item.text,
-            isEdited: false
+            isEdited: false,
+            isItemValidation: false
         }
     },
     props: {
@@ -19,11 +20,21 @@ Vue.component("todo-item", {
             this.isEdited = true;
         },
         saveItem: function () {
+            if (this.newText.trim().length === 0) {
+                this.isItemValidation = true;
+                return;
+            }
+
             this.item.text = this.newText;
+
             this.isEdited = false;
+            this.isItemValidation = false;
         },
         cancelItem: function () {
-            return this.isEdited = false;
+            this.newText = this.item.text;
+
+            this.isItemValidation = false;
+            this.isEdited = false;
         }
     },
     template: "#todo-item-template"
@@ -33,12 +44,14 @@ Vue.component("todo-list", {
     data: function () {
         return {
             items: [],
-            newItemText: ""
+            newItemText: "",
+            isFormValidation: false
         }
     },
     methods: {
         addItem: function () {
             if (this.newItemText.trim().length === 0) {
+                this.isFormValidation = true;
                 return;
             }
 
@@ -47,11 +60,12 @@ Vue.component("todo-list", {
             });
 
             this.newItemText = "";
+            this.isFormValidation = false;
         },
         removeItem: function (item) {
             this.items = this.items.filter(function (e) {
                 return e !== item;
-            })
+            });
         }
     },
     template: "#todo-list-template"

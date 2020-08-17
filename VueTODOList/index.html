@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <title>Todo List</title>
-
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -17,12 +15,17 @@
 
 <script id="todo-list-template" type="text/x-template">
     <div>
-        <div class="input-group py-3 emphasize">
-            <input v-model="newItemText" type="text" class="form-control" placeholder="Введите заметку"
-                   aria-label="Введите заметку" aria-describedby="add_button">
-            <div class="input-group-append">
-                <button @click="addItem" class="btn btn-outline-success" type="button" id="add_button">Добавить
-                </button>
+        <div class="emphasize">
+            <div class="input-group py-3">
+                <input v-model="newItemText" type="text" class="form-control" placeholder="Введите текст заметки"
+                       aria-label="Введите заметку" aria-describedby="add_button">
+                <div class="input-group-append">
+                    <button @click="addItem" class="btn btn-outline-success" type="button" id="add_button">Добавить
+                    </button>
+                </div>
+            </div>
+            <div class="alert alert-warning" v-show="isFormValidation">
+                Текст заметки не должен быть пустым!!! Введите текст заметки и нажмите кнопку добавить.
             </div>
         </div>
         <div>
@@ -48,6 +51,10 @@
                 <button @click="saveItem" class="btn btn-outline-primary" type="button">Сохранить</button>
                 <button @click="cancelItem" class="btn btn-outline-danger" type="button">Отменить</button>
             </div>
+        </div>
+        <div class="alert alert-warning" v-show="isItemValidation">
+            Текст заметки не должен быть пустым!!! Введите текст заметки и нажмите кнопку Сохранить или Отмену,
+            что бы вернуть старую заметку.
         </div>
     </div>
 </script>
