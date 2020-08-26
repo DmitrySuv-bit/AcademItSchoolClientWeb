@@ -10,17 +10,14 @@
             .filter(function (person) {
                 return person.age >= 20 && person.age <= 30;
             })
-            .uniq()
-            .sortBy()
+            .sortBy("age")
             .value();
     }
 
     function addFullName(people) {
-        return _.chain(people)
-            .map(function (person) {
-                return _.extend(person, {fullName: person.name + " " + person.lastName});
-            })
-            .value();
+        _.each(people, function (person) {
+            person["fullName"] = person.name + " " + person.lastName;
+        });
     }
 
     var people = [
@@ -83,5 +80,6 @@
     console.log(getPeopleBetween20And30(people));
 
     console.log("Список людей с полем Full name: ");
-    console.log(addFullName(people));
+    addFullName(people);
+    console.log(people);
 })();
