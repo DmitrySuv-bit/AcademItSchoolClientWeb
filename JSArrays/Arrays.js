@@ -29,31 +29,25 @@
         });
     }
 
-    function getSumArray(array) {
+    function getArraySum(array) {
         return array.reduce(function (sum, number) {
             return sum + number;
         }, 0);
     }
 
-    function getFillArray(initialNumber, finiteNumber, step) {
+    function getArrayFill(startNumber, endNumber, step) {
         var newArray = [];
 
-        if (initialNumber === finiteNumber) {
-            return newArray;
-        } else if (initialNumber > finiteNumber) {
-            while (initialNumber >= finiteNumber) {
-                newArray.push(initialNumber);
-
-                initialNumber -= step;
+        if (startNumber > endNumber) {
+            for (var i = startNumber; i >= endNumber; i -= step) {
+                newArray.push(i);
             }
 
             return newArray;
-        } else {
-            while (initialNumber <= finiteNumber) {
-                newArray.push(initialNumber);
+        }
 
-                initialNumber += step;
-            }
+        for (var j = startNumber; j <= endNumber; j += step) {
+            newArray.push(j);
         }
 
         return newArray;
@@ -78,11 +72,12 @@
     console.log(getEvenNumbersArray(myArray));
 
     console.log("Сумма элементов массива, четных чисел: ");
-    console.log(getSumArray(getEvenNumbersArray(myArray)));
+    console.log(getArraySum(getEvenNumbersArray(myArray)));
 
     console.log("Созданный массив чисел от 1 до 100: ");
-    console.log(getFillArray(1, 100, 1));
+    var newArray = getArrayFill(1, 100, 1);
+    console.log(newArray);
 
     console.log("Массив квадратов четных чисел: ");
-    console.log(getSquaresArray(getEvenNumbersArray(getFillArray(1, 100, 1))));
+    console.log(getSquaresArray(getEvenNumbersArray(newArray)));
 })();
