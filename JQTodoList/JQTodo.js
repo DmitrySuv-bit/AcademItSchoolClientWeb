@@ -7,7 +7,7 @@ $(document).ready(function () {
         var text = newTodoTextField.val();
 
         if (text === "") {
-            alert("Введите заметку!!!");
+            alert("Введите заметку!");
             return;
         }
 
@@ -39,7 +39,7 @@ $(document).ready(function () {
                     var noteText = todoItem.find(".note_text").val();
 
                     if (noteText.length === 0) {
-                        alert("Нельзя сохранить пустую заметку!!! Введите текст или нажмите Отмена.");
+                        alert("Нельзя сохранить пустую заметку! Введите текст или нажмите Отмена.");
                         return;
                     }
 
