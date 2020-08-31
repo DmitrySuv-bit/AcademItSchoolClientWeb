@@ -1,11 +1,12 @@
 $(document).ready(function () {
     var addNoteButton = $("#add_button");
     var clearNoteButton = $("#clear_button");
-    var newNameTextField = $("#inputName");
-    var newSurnameTextField = $("#inputSurname");
-    var newPhoneTextField = $("#inputPhone");
+    var newNameTextField = $("#input_name");
+    var newSurnameTextField = $("#input_surname");
+    var newPhoneTextField = $("#input_phone");
     var table = $(".table > tbody");
     var forms = $(".needs-validation");
+    var phoneMatchingError = $(".phone_matching_error");
 
     var isAddedPhone = false;
     var noteNumber = 1;
@@ -36,11 +37,13 @@ $(document).ready(function () {
         }
 
         if (checkPhoneMatch()) {
-            $(".phone_matching_error").show();
+            $("#repeatable_phone").text(textPhone);
 
+            phoneMatchingError.show();
+            newPhoneTextField.val("");
             isAddedPhone = false;
         } else {
-            $(".phone_matching_error").hide();
+            phoneMatchingError.hide();
 
             var tableItem = $("<tr></tr>");
 
@@ -54,7 +57,7 @@ $(document).ready(function () {
         function switchToViewMode() {
             tableItem.html("<td class='text-center note_number'></td> <td class='name_column'></td>" +
                 "<td class='surname_column'></td><td class='phone_column'></td>" +
-                "<td class='text-center'><button data-title='Подтвердите удаление' data-toggle='confirmation' " +
+                "<td class='text-center'><button title='Подтвердите удаление' data-toggle='confirmation' " +
                 "data-btn-ok-label='Удалить' data-btn-cancel-label='Отменить' class='delete_button btn-block' " +
                 "type='button'>X</button></td>");
 
@@ -63,9 +66,7 @@ $(document).ready(function () {
             ++noteNumber;
 
             tableItem.find(".name_column").text(textName);
-
             tableItem.find(".surname_column").text(textSurname);
-
             tableItem.find(".phone_column").text(textPhone);
 
             tableItem.find(".delete_button").on("confirmed.bs.confirmation", function () {
@@ -87,34 +88,16 @@ $(document).ready(function () {
         newSurnameTextField.val("");
         newPhoneTextField.val("");
 
-        $(".phone_matching_error").hide();
+        phoneMatchingError.hide();
 
         removeValidated();
     }
 
     function addValidated() {
-        Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('click', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-
-                form.classList.add('was-validated');
-            }, false);
-        });
+        forms.addClass("was-validated");
     }
 
     function removeValidated() {
-        Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('click', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-
-                form.classList.remove('was-validated');
-            }, false);
-        });
+        forms.removeClass("was-validated");
     }
 });

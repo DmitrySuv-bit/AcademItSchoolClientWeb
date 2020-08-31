@@ -1,15 +1,11 @@
-.my_container {
-    max-width: 500px;
-}
-
 .table th, .table td {
     border-width: 4px 2px;
-    border-color: white;
+    border-color: #FFF;
 }
 
 .table th {
     background-color: #4F81BD;
-    color: #FFFFFF;
+    color: #FFF;
 }
 
 .table tr {
@@ -41,18 +37,6 @@
     border-bottom-style: dashed;
     border-bottom-width: 1px;
     border-color: #3498DB;
-}
-
-.note_number {
-}
-
-.name_column {
-}
-
-.surname_column {
-}
-
-.phone_column {
 }
 
 .phone_matching_error {
