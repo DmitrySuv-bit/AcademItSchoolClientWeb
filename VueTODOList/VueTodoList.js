@@ -26,13 +26,11 @@ Vue.component("todo-item", {
             }
 
             this.newText = this.item.text;
-
             this.beingEdited = false;
             this.emptyNoteError = false;
         },
         cancelItem: function () {
             this.item.text = this.newText;
-
             this.emptyNoteError = false;
             this.beingEdited = false;
         }
