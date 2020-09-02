@@ -2,8 +2,8 @@ Vue.component("todo-item", {
     data: function () {
         return {
             newText: this.item.text,
-            isEdited: false,
-            isItemValidation: false
+            beingEdited: false,
+            emptyNoteError: false
         }
     },
     props: {
@@ -17,24 +17,24 @@ Vue.component("todo-item", {
             this.$emit("remove-item", this.item);
         },
         editItem: function () {
-            this.isEdited = true;
+            this.beingEdited = true;
         },
         saveItem: function () {
-            if (this.newText.trim().length === 0) {
-                this.isItemValidation = true;
+            if (this.item.text.trim().length === 0) {
+                this.emptyNoteError = true;
                 return;
             }
 
-            this.item.text = this.newText;
-
-            this.isEdited = false;
-            this.isItemValidation = false;
-        },
-        cancelItem: function () {
             this.newText = this.item.text;
 
-            this.isItemValidation = false;
-            this.isEdited = false;
+            this.beingEdited = false;
+            this.emptyNoteError = false;
+        },
+        cancelItem: function () {
+            this.item.text = this.newText;
+
+            this.emptyNoteError = false;
+            this.beingEdited = false;
         }
     },
     template: "#todo-item-template"
@@ -69,7 +69,7 @@ Vue.component("todo-list", {
         }
     },
     template: "#todo-list-template"
-})
+});
 
 new Vue({
     el: "#app"

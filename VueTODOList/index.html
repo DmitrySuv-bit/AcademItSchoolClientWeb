@@ -24,7 +24,7 @@
                     </button>
                 </div>
             </div>
-            <div class="alert alert-warning" v-show="isFormValidation">
+            <div class="alert alert-warning" v-if="isFormValidation">
                 Текст заметки не должен быть пустым!!! Введите текст заметки и нажмите кнопку Добавить.
             </div>
         </div>
@@ -36,7 +36,7 @@
 
 <script id="todo-item-template" type="text/x-template">
     <div>
-        <div class="input-group py-2" v-show="!isEdited">
+        <div class="input-group py-2" v-if="!beingEdited">
             <input v-model="item.text" type="text" class="form-control" aria-label="new-note"
                    aria-describedby="button-note" readonly>
             <div class="input-group-append" id="button-note">
@@ -44,15 +44,15 @@
                 <button @click="removeItem" class="btn btn-outline-danger" type="button">Удалить</button>
             </div>
         </div>
-        <div class="input-group py-2" v-show="isEdited">
-            <input v-model="newText" type="text" class="form-control" aria-label="new-note"
+        <div class="input-group py-2" v-if="beingEdited">
+            <input v-model="item.text" type="text" class="form-control" aria-label="new-note"
                    aria-describedby="edit-button-note">
             <div class="input-group-append" id="edit-button-note">
                 <button @click="saveItem" class="btn btn-outline-primary" type="button">Сохранить</button>
                 <button @click="cancelItem" class="btn btn-outline-danger" type="button">Отменить</button>
             </div>
         </div>
-        <div class="alert alert-warning" v-show="isItemValidation">
+        <div class="alert alert-warning" v-if="emptyNoteError">
             Текст заметки не должен быть пустым!!! Введите текст заметки и нажмите кнопку Сохранить или Отмену,
             что бы вернуть старую заметку.
         </div>
