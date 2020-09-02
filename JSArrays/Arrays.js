@@ -35,7 +35,7 @@
         }, 0);
     }
 
-    function getArrayFill(startNumber, endNumber, step) {
+    function getFilledArray(startNumber, endNumber, step) {
         var newArray = [];
 
         if (startNumber > endNumber) {
@@ -75,7 +75,7 @@
     console.log(getArraySum(getEvenNumbersArray(myArray)));
 
     console.log("Созданный массив чисел от 1 до 100: ");
-    var newArray = getArrayFill(1, 100, 1);
+    var newArray = getFilledArray(1, 100, 1);
     console.log(newArray);
 
     console.log("Массив квадратов четных чисел: ");
