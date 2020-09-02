@@ -16,7 +16,7 @@
 
     function addFullName(people) {
         _.each(people, function (person) {
-            person["fullName"] = person.name + " " + person.lastName;
+            person.fullName = person.name + " " + person.lastName;
         });
     }
 
