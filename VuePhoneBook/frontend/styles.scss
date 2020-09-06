@@ -1,0 +1,48 @@
+.table th, .table td {
+  border-width: 4px 2px;
+  border-color: #FFF;
+}
+
+.table th {
+  background-color: #4F81BD;
+  color: #FFF;
+}
+
+.table tr {
+  background-color: #d0d8e8;
+}
+
+.raz {
+  -moz-appearance: textfield;
+}
+
+.raz::-webkit-inner-spin-button {
+  display: none;
+}
+
+.delete_button {
+  border-width: 0;
+  padding: 0;
+  background-color: inherit;
+  color: #880f08;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.delete_button:focus {
+  outline: none;
+}
+
+.emphasize {
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+  border-color: #3498DB;
+}
+
+.phone_matching_error {
+  display: none;
+}
+
+.table-hover {
+  background-color: #c7d0e7;
+}
