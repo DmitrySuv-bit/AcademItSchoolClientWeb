@@ -28,8 +28,8 @@
             </div>
             <button type="button" class="btn btn-outline-primary" @click="addContact">Добавить</button>
             <button type="button" class="btn btn-outline-danger" @click="clearForm">Очистить</button>
-            <div class="phone_matching_error mt-2 mb-0 alert alert-danger">
-              Контакт с номером телефона <span id="repeatable_phone"></span> уже добавлен!
+            <div class="mt-2 mb-0 alert alert-danger" v-if="phoneMatchingError">
+              Контакт с номером телефона <span v-text="matchingPhone"></span> уже добавлен!
             </div>
           </form>
         </div>
@@ -49,16 +49,14 @@
           </tr>
           </thead>
           <tbody>
-          <tr v-cloak v-for="(contact, index) in contacts" class="text-nowrap">
+          <tr v-cloak :contact="contact" :key="contact.id" v-for="(contact, index) in contacts" class="text-nowrap">
             <th class="text-center">{{ index + 1 }}</th>
             <th>{{ contact.name }}</th>
             <th>{{ contact.surname }}</th>
             <th>{{ contact.phone }}</th>
             <th class="text-center">
-              <div title="Подтвердите удаление">
-              <button @click="removeContact" data-title="Подтвердите удаление" data-toggle="confirmation"
-                      data-btn-ok-label="Удалить" data-btn-cancel-label="Отменить"
-                      class="delete_button btn-block" type='button'>X</button>
+              <div title="Удалить контакт">
+                <button @click="removeContact(contact)" class='delete_button btn-block' type='button'>X</button>
               </div>
             </th>
           </tr>
@@ -78,7 +76,9 @@ export default {
       name: "",
       surname: "",
       phone: "",
-      isInvalid: false
+      isInvalid: false,
+      phoneMatchingError: false,
+      matchingPhone: ""
     }
   },
 
@@ -89,6 +89,8 @@ export default {
         return;
       }
 
+      this.checkMatchingPhone();
+
       this.contacts.push({
         name: this.name,
         surname: this.surname,
@@ -96,6 +98,7 @@ export default {
       });
 
       this.isInvalid = false;
+      this.phoneMatchingError = false;
 
       this.name = "";
       this.surname = "";
@@ -108,10 +111,24 @@ export default {
       this.surname = "";
       this.phone = "";
     },
-    removeContact() {
+    removeContact(contact) {
+      this.contacts = this.contacts.filter(function (e) {
+        return e !== contact;
+      });
+    },
+    checkMatchingPhone() {
+      for (var i = 0; i < this.contacts.length; ++i) {
+        if (this.contacts[i].phone === this.phone) {
+          this.phoneMatchingError = true;
+          this.isInvalid = true;
 
+          this.matchingPhone = this.phone;
+          this.phone = "";
+
+          return;
+        }
+      }
     }
-
   }
 }
 </script>
