@@ -2,9 +2,9 @@ Vue.component("todo-item", {
     data: function () {
         return {
             newText: this.item.text,
-            beingEdited: false,
+            isEditing: false,
             emptyNoteError: false
-        }
+        };
     },
     props: {
         item: {
@@ -17,7 +17,7 @@ Vue.component("todo-item", {
             this.$emit("remove-item", this.item);
         },
         editItem: function () {
-            this.beingEdited = true;
+            this.isEditing = true;
         },
         saveItem: function () {
             if (this.item.text.trim().length === 0) {
@@ -25,14 +25,18 @@ Vue.component("todo-item", {
                 return;
             }
 
+            this.$emit("save-item", this.item);
+
             this.newText = this.item.text;
-            this.beingEdited = false;
+
+            this.isEditing = false;
             this.emptyNoteError = false;
         },
         cancelItem: function () {
-            this.item.text = this.newText;
+            this.$emit("cancel-item", this.item, this.newText);
+
             this.emptyNoteError = false;
-            this.beingEdited = false;
+            this.isEditing = false;
         }
     },
     template: "#todo-item-template"
@@ -44,7 +48,7 @@ Vue.component("todo-list", {
             items: [],
             newItemText: "",
             isFormValidation: false
-        }
+        };
     },
     methods: {
         addItem: function () {
@@ -64,6 +68,12 @@ Vue.component("todo-list", {
             this.items = this.items.filter(function (e) {
                 return e !== item;
             });
+        },
+        saveItem: function (item) {
+            item.text = this.item.text;
+        },
+        cancelItem: function (item, newText) {
+            item.text = newText;
         }
     },
     template: "#todo-list-template"

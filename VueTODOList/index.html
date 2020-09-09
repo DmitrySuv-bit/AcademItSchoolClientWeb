@@ -29,14 +29,19 @@
             </div>
         </div>
         <div>
-            <todo-item :item="item" :key="item.id" @remove-item="removeItem" v-for="item in items"></todo-item>
+            <todo-item :item="item" :key="item.id"
+                       v-for="item in items"
+                       @remove-item="removeItem"
+                       @save-item="saveItem"
+                       @cancel-item="cancelItem">
+            </todo-item>
         </div>
     </div>
 </script>
 
 <script id="todo-item-template" type="text/x-template">
     <div>
-        <div class="input-group py-2" v-if="!beingEdited">
+        <div class="input-group py-2" v-if="!isEditing">
             <input v-model="item.text" type="text" class="form-control" aria-label="new-note"
                    aria-describedby="button-note" readonly>
             <div class="input-group-append" id="button-note">
@@ -44,7 +49,7 @@
                 <button @click="removeItem" class="btn btn-outline-danger" type="button">Удалить</button>
             </div>
         </div>
-        <div class="input-group py-2" v-if="beingEdited">
+        <div class="input-group py-2" v-if="isEditing">
             <input v-model="item.text" type="text" class="form-control" aria-label="new-note"
                    aria-describedby="edit-button-note">
             <div class="input-group-append" id="edit-button-note">
